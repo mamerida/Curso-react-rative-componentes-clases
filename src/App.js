@@ -18,13 +18,19 @@ class Button extends Component{
     console.log("componentDidMount")
   }
 
+  //prevProps contiene las propiedades anteriores a la actualizacion de componente
+  //prevState contiene el estado anterior osea lo guardado en la variable state
+  componentDidUpdate(prevProps,prevState){
+    console.log("componentDidUpdate",prevProps,prevState)
+  }
+
 
   render(){
     // al estar button dentro de app al executar render de app se ejecuta tambien el render de button por que el componente hijo 
     // se actualiza con el padre
     console.log("se renderizo boton")
     return(
-      <button>
+      <button onClick={()=> this.setState({prop:1})}>
         Enviar
       </button>
     )
