@@ -1,25 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import { Component } from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// en este caso creo una clase App que hago exnteder el componramiento de component 
+class App extends Component{
+
+    // el metodo mas importante es reder lo que va a mostrar el componente
+    render(){
+      return(
+        <p>Hola Mundo</p>
+      )
+    }
+
 }
+
 
 export default App;
