@@ -24,6 +24,11 @@ class Button extends Component{
     console.log("componentDidUpdate",prevProps,prevState)
   }
 
+//ESTE METODO SE EJECUTA AL DESMONTAR EL COMPONENTE OSEA CUANDO SE DESTRUYE DESDE EL FRONT 
+  componentWillUnmount(){
+    console.log("desmontando componente",this.props,this.state)
+  }
+
 
   render(){
     // al estar button dentro de app al executar render de app se ejecuta tambien el render de button por que el componente hijo 
@@ -55,7 +60,8 @@ class App extends Component{
       return(
         <div>
           <p>Hola Mundo</p>
-          <Button chanchito ="Feliz"/>
+          {/* GENERO ESTE IF PARA PODER VER EN CASO DE QUE EL ESTADO SEA DISTINTO DE 3 DESMONTAR EL COMPONENTE */}
+          {this.state.valor ===3 ? <Button chanchito ="Feliz"/> : ""}
           <button className={`${this.state.valor}`} onClick={() =>this.setState({valor: 2})}>
             Enviar en app
           </button>
